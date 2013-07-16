@@ -12,6 +12,9 @@ namespace Win32SetupAPIWrapper
    /// <summary>
    /// Class that holds the device information that 
    /// can be retrieved via the win32 setup apis.
+   /// Caution! Almost all properties are stored in
+   /// Strings, but they might actually be numbers
+   /// or binary data!
    /// </summary>
    public class DeviceInformation
    {
@@ -187,8 +190,11 @@ namespace Win32SetupAPIWrapper
       private String containerId;
       #endregion
 
+      /// <summary>
+      /// Initializes a new instance of the <see cref="DeviceInformation"/> class.
+      /// </summary>
       public DeviceInformation()
-      {
+      { // Initialization: All fields empty.
          this.busNo = -1;
          this.description = String.Empty;
          this.busTypeGuid = String.Empty;
@@ -879,16 +885,11 @@ namespace Win32SetupAPIWrapper
       /// the same device.
       /// </summary>
       /// <param name="comparisonSubject">The comparison subject.</param>
-      /// <returns></returns>
+      /// <returns>True if the two objects refer to the same device.</returns>
       public Boolean AreSameDevices(DeviceInformation comparisonSubject)
       {
          Boolean result = true;
-
          result &= this.PhysicalDeviceObjectName.Equals(comparisonSubject.PhysicalDeviceObjectName);
-         //result &= (this.BusNumber == comparisonSubject.BusNumber);
-         //result &= (this.BusTypeGUID.Equals(comparisonSubject.BusTypeGUID));
-         //result &= (this.HardwareID.Equals(comparisonSubject.HardwareID));
-
          return result;
       }
       #endregion
