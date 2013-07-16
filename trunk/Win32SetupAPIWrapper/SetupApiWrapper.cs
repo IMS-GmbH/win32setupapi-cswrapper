@@ -153,16 +153,9 @@ namespace Win32SetupAPIWrapper
 
             RebootRequired = needReboot;
          }
-         catch (Exception ex)
+         catch (Exception)
          {
-            int lwe = Marshal.GetLastWin32Error();
-
-            String stackStrace = ex.StackTrace;
-
-            if (Debugger.IsAttached)
-            {
-               Debugger.Break();
-            }
+            throw;
          }
       }
 
@@ -398,7 +391,7 @@ namespace Win32SetupAPIWrapper
       /// </summary>
       /// <param name="devInfoSet">The device info set.</param>
       /// <param name="devInfoData">The device info data.</param>
-      /// <returns></returns>
+      /// <returns>An array of matching device drivers.</returns>
       private static DriverInstance[] GetMatchingDrivers(
          IntPtr devInfoSet,
          SP_DEVINFO_DATA devInfoData)
@@ -421,13 +414,6 @@ namespace Win32SetupAPIWrapper
                   ProviderName = drvInfoData.ProviderName,
                   DriverDate = drvInfoData.DriverDate.ToDateTime()
                });
-            }
-
-            if (Marshal.GetLastWin32Error() != 0 && Marshal.GetLastWin32Error() != 259)
-            {
-               Debugger.Break();
-
-               int e = Marshal.GetLastWin32Error();
             }
          }
 
@@ -458,8 +444,13 @@ namespace Win32SetupAPIWrapper
          for (int i = 0; Win32SetupApi.SetupDiEnumDeviceInfo(deviceInfoSet, i, ref deviceInfoData); i++)
          {
             String matchSubjectDesc = GetDescription(deviceInfoSet, deviceInfoData);
+            String matchSubjectPhysDevName = GetPhysicalDeviceObjectName(deviceInfoSet, deviceInfoData);
             int matchSubjectBus = GetBusNumber(deviceInfoSet, deviceInfoData);
-            if (deviceInformation.Description.Equals(matchSubjectDesc) && deviceInformation.BusNumber.Equals(matchSubjectBus))
+
+            if (
+                  deviceInformation.Description.Equals(matchSubjectDesc) 
+               && deviceInformation.BusNumber.Equals(matchSubjectBus)
+               && deviceInformation.PhysicalDeviceObjectName.Equals(matchSubjectPhysDevName))
             {
                return;
             }
