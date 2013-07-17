@@ -5,7 +5,7 @@
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
 
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiWrapper
 {
    /// <summary>
    /// Enum that specifies a filter that can be used to

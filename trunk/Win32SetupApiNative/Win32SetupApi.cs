@@ -5,7 +5,7 @@
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
 
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiNative
 {
    using System;
    using System.Runtime.InteropServices;
@@ -16,7 +16,7 @@ namespace Win32SetupAPIWrapper
    /// and newdev.h Windows APIs that allow reading hardware properties 
    /// and switching drivers on devices.
    /// </summary>
-   internal static class Win32SetupApi
+   public static class Win32SetupApi
    {
       /// <summary>
       /// Destroys a device info list created with SetupDiEnumDeviceInfo.

@@ -5,16 +5,14 @@
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
 
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiNative
 {
-   using System;
-   using System.Collections.Generic;
 
    /// <summary>
    /// Static class that holds constants that are not sorted
    /// into an enumeration.
    /// </summary>
-   internal static class Constants
+   public static class Constants
    {
       /// <summary>
       /// The CR code constant that specifies "success"

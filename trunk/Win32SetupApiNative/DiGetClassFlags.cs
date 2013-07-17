@@ -5,7 +5,7 @@
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
 
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiNative
 {
    using System;
 
@@ -13,7 +13,7 @@ namespace Win32SetupAPIWrapper
    /// Filter values for output of the DiGetClassDevs function.
    /// </summary>
    [Flags]
-   internal enum DIGCF : uint
+   public enum DIGCF : uint
    {
       /// <summary>
       /// The DiGetClassDevs default value

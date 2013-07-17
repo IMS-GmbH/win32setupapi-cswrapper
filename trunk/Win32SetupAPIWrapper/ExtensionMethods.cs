@@ -5,7 +5,7 @@
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
 
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiWrapper
 {
    using System;
    using System.Runtime.InteropServices.ComTypes;

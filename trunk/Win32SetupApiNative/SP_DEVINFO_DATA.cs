@@ -5,7 +5,7 @@
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
 
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiNative
 {
    using System;
    using System.Runtime.InteropServices;
@@ -14,7 +14,7 @@ namespace Win32SetupAPIWrapper
    /// The struct that contains the device info retrieved from the win32 APIs.
    /// </summary>
    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-   internal struct SP_DEVINFO_DATA
+   public struct SP_DEVINFO_DATA
    {
       /// <summary>
       /// The struct size

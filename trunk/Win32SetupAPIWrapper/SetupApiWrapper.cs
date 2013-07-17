@@ -5,13 +5,14 @@
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
 
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiWrapper
 {
    using System;
    using System.Collections.Generic;
    using System.Diagnostics;
    using System.Runtime.InteropServices;
    using System.Text;
+   using Win32SetupApiNative;
 
    /// <summary>
    /// A layer on top of the win32 setupapi that allows for

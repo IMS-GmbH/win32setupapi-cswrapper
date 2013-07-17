@@ -4,7 +4,7 @@
 // </copyright>
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiNative
 {
    using System;
    using System.Runtime.InteropServices;
@@ -13,7 +13,7 @@ namespace Win32SetupAPIWrapper
    /// The struct that contains the driver info retrieved from the win32 APIs.
    /// </summary>
    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = 4)]
-   internal struct SP_DRVINFO_DATA
+   public struct SP_DRVINFO_DATA
    {
       /// <summary>
       /// The size of the struct

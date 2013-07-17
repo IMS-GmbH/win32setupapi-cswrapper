@@ -1,18 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A0DF3BA7-E594-48B0-86D8-2D8D87402B60}</ProjectGuid>
+    <ProjectGuid>{98EA0F91-D479-44DA-89E6-E637E96D8971}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Win32SetupApiNative</RootNamespace>
-    <AssemblyName>Win32SetupAPIWrapper</AssemblyName>
+    <AssemblyName>Win32SetupApiNative</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,22 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeviceFilter.cs" />
-    <Compile Include="DriverInstance.cs" />
-    <Compile Include="DeviceInformation.cs" />
-    <Compile Include="SetupApiWrapper.cs" />
-    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DeviceRegistryPropertyCodes.cs" />
+    <Compile Include="DiGetClassFlags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Win32SetupApiNative\Win32SetupApiNative.csproj">
-      <Project>{98ea0f91-d479-44da-89e6-e637e96d8971}</Project>
-      <Name>Win32SetupApiNative</Name>
-    </ProjectReference>
+    <Compile Include="SP_DEVINFO_DATA.cs" />
+    <Compile Include="SP_DRVINFO_DATA.cs" />
+    <Compile Include="Win32SetupApi.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

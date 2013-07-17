@@ -5,12 +5,12 @@
 // <author>Janis Fliegenschmidt</author>
 //-----------------------------------------------------------------------
 
-namespace Win32SetupAPIWrapper
+namespace Win32SetupApiNative
 {
    /// <summary>
    /// Device registry property codes
    /// </summary>
-   internal enum SPDRP : int
+   public enum SPDRP : int
    {
       /// <summary>
       /// Device Description (R/W)
